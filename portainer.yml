@@ -6,8 +6,8 @@ services:
     command: -H unix:///var/run/docker.sock
     restart: "${RESTART}"
     ports:
-      - ${PORTAINER_ADMIN_PORT}:${PORTAINER_ADMIN_PORT}
-      - ${PORTAINER_PORT}:${PORTAINER_PORT}
+      - 9000:${PORTAINER_ADMIN_PORT}
+      - 8000:${PORTAINER_PORT}
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - portainer_data:/data
